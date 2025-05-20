@@ -2,7 +2,7 @@
 <html>      
 <head>           
 <meta charset="utf-8" />           
-<title>Modifier un professeur</title>   
+<title>Supprimer un professeur</title>   
 
 </head>   
 <body style="background:url(image/IMG024.jpg); color: white; font-size: 24px ">  
@@ -19,7 +19,7 @@
 		<ul  class="nav justify-content-end" >
 			<form class="form-inline my-2 my-lg-0">
 			    <li class="nav-item active" >
-			        <a class="nav-link" href="#" style="color:white"><h5> Modification d'un professeur</h5><span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="#" style="color:white"><h5> Suppression d'un professeur</h5><span class="sr-only">(current)</span></a>
 			    </li>
 			</form>
 		</ul>
@@ -36,21 +36,10 @@
 						<input type="text" class="form-control" id="Code_PROF" placeholder="Entrer le code" name="Code_PROF">
 					  </div>
 					</div>
-					<div class="form-group">
-					  <label class="control-label col-sm-2" for="Nom_Prof">Nom_Prof:</label>
-					  <div class="col-sm-10">          
-						<input type="text" class="form-control" id="Nom_Prof" placeholder="Entrer le libelle " name="Nom_Prof">
-					  </div>
-					</div>
-					<div class="form-group">
-					  <label class="control-label col-sm-2" for="Prenom_Prof">Prenom_Prof:</label>
-					  <div class="col-sm-10">          
-						<input type="text" class="form-control" id="Prenom_Prof" placeholder="Entrer le libelle " name="Prenom_Prof">
-					  </div>
-					</div>
+					
 					<div class="form-group">        
 					  <div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary"><a  style="color:white" name="modifier">Modifier</a></button>
+						<button type="submit" class="btn btn-primary"><a  style="color:white">Supprimer</a></button>
                         <button type="submit" class="btn btn-primary" ><a href="AffichageProf.php" style="color: white">Annuler</a></button>
 				     </div>
 					</div>
@@ -70,17 +59,48 @@
  
 
 
- <?php
-require_once('connexion.php');
-$ac = new connexion();
-$con = $ac->connection();
 
-	$Code_PROF = $_POST['Code_PROF'];
-	$Nom_Prof =$_POST['Nom_Prof'];
-	$Prenom_Prof=$_POST['Prenom_Prof'];
+<?php
+session_start();
+require_once __DIR__ . '/../config/connexion.php';
 
-	$req = $con->prepare(" UPDATE `professeur` SET `Nom_Prof`='$Nom_Prof', `Prenom_Prof`='$Prenom_Prof' WHERE `Code_PROF`='$Code_PROF'");
-	$req->execute();
-	header("location:AffichageProf.php");
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit();
+}
 
+if (isset($_GET['id'])) {
+    $ac = new Connexion();
+    $con = $ac->connection();
+    
+    $prof_id = htmlspecialchars($_GET['id']);
+    
+    try {
+        // First check if professor exists
+        $check = $con->prepare("SELECT COUNT(*) FROM professeur WHERE Code_PROF = :id");
+        $check->execute(['id' => $prof_id]);
+        
+        if ($check->fetchColumn() > 0) {
+            // Delete related records first (assuming foreign key constraints)
+            $stmt1 = $con->prepare("DELETE FROM faire WHERE FK_Code_PROF = :id");
+            $stmt1->execute(['id' => $prof_id]);
+            
+            $stmt2 = $con->prepare("DELETE FROM evaluer WHERE FK_Code_PROF = :id");
+            $stmt2->execute(['id' => $prof_id]);
+            
+            // Finally delete the professor
+            $stmt3 = $con->prepare("DELETE FROM professeur WHERE Code_PROF = :id");
+            $stmt3->execute(['id' => $prof_id]);
+            
+            $_SESSION['success'] = "Professeur supprimé avec succès.";
+        } else {
+            $_SESSION['error'] = "Professeur non trouvé.";
+        }
+    } catch(PDOException $e) {
+        $_SESSION['error'] = "Erreur lors de la suppression du professeur.";
+    }
+}
+
+header("Location: AffichageProf.php");
+exit();
 ?>

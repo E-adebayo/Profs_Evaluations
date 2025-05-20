@@ -2,7 +2,7 @@
 <html>      
 <head>           
 <meta charset="utf-8" />           
-<title>Modifier une EC</title>   
+<title>Supprimer une EC</title>   
 
 </head>   
 <body style="background:url(image/IMG024.jpg); color: white; font-size: 24px ">  
@@ -19,7 +19,7 @@
 		<ul  class="nav justify-content-end" >
 			<form class="form-inline my-2 my-lg-0">
 			    <li class="nav-item active" >
-			        <a class="nav-link" href="#" style="color:white"><h5> Modification d'une EC</h5><span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="#" style="color:white"><h5> Suppression d'une EC</h5><span class="sr-only">(current)</span></a>
 			    </li>
 			</form>
 		</ul>
@@ -36,16 +36,10 @@
 						<input type="text" class="form-control" id="Code_EC" placeholder="Entrer le code" name="Code_EC">
 					  </div>
 					</div>
-					<div class="form-group">
-					  <label class="control-label col-sm-2" for="Libelle_EC">Libelle_EC:</label>
-					  <div class="col-sm-10">          
-						<input type="text" class="form-control" id="Libelle_EC" placeholder="Entrer le libelle " name="Libelle_EC">
-					  </div>
-					</div>
 					
 					<div class="form-group">        
 					  <div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary"><a  style="color:white" name="modifier">Modifier</a></button>
+						<button type="submit" class="btn btn-primary"><a  style="color:white">Supprimer</a></button>
                         <button type="submit" class="btn btn-primary" ><a href="AffichageEC.php" style="color: white">Annuler</a></button>
 				     </div>
 					</div>
@@ -64,17 +58,47 @@
 </html> 
  
 
+<?php
+session_start();
+require_once __DIR__ . '/../config/connexion.php';
 
- <?php
-require_once('connexion.php');
-$ac = new connexion();
-$con = $ac->connection();
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit();
+}
 
-	$Code_EC = $_POST['Code_EC'];
-	$Libelle_EC =$_POST['Libelle_EC'];
+if (isset($_GET['id'])) {
+    $ac = new Connexion();
+    $con = $ac->connection();
+    
+    $ec_id = htmlspecialchars($_GET['id']);
+    
+    try {
+        // First check if EC exists
+        $check = $con->prepare("SELECT COUNT(*) FROM ec WHERE Code_EC = :id");
+        $check->execute(['id' => $ec_id]);
+        
+        if ($check->fetchColumn() > 0) {
+            // Delete related records first (assuming foreign key constraints)
+            $stmt1 = $con->prepare("DELETE FROM enseigner WHERE FK_Code_EC = :id");
+            $stmt1->execute(['id' => $ec_id]);
+            
+            $stmt2 = $con->prepare("DELETE FROM faire WHERE FK_Code_EC = :id");
+            $stmt2->execute(['id' => $ec_id]);
+            
+            // Finally delete the EC
+            $stmt3 = $con->prepare("DELETE FROM ec WHERE Code_EC = :id");
+            $stmt3->execute(['id' => $ec_id]);
+            
+            $_SESSION['success'] = "EC supprimé avec succès.";
+        } else {
+            $_SESSION['error'] = "EC non trouvé.";
+        }
+    } catch(PDOException $e) {
+        $_SESSION['error'] = "Erreur lors de la suppression de l'EC.";
+    }
+}
 
-	$req = $con->prepare(" UPDATE `ec` SET `Libelle_EC`='$Libelle_EC' WHERE `Code_EC`='$Code_EC'");
-	$req->execute();
-	header("location:AffichageEC.php");
-
+header("Location: AffichageEC.php");
+exit();
 ?>

@@ -2,7 +2,7 @@
 <html>      
 <head>           
 <meta charset="utf-8" />           
-<title>Modifier une UE</title>   
+<title>Supprimer une UE</title>   
 
 </head>   
 <body style="background:url(image/IMG024.jpg); color: white; font-size: 24px ">  
@@ -19,7 +19,7 @@
 		<ul  class="nav justify-content-end" >
 			<form class="form-inline my-2 my-lg-0">
 			    <li class="nav-item active" >
-			        <a class="nav-link" href="#" style="color:white"><h5> Modification d'une UE</h5><span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="#" style="color:white"><h5> Suppression d'une UE</h5><span class="sr-only">(current)</span></a>
 			    </li>
 			</form>
 		</ul>
@@ -36,16 +36,10 @@
 						<input type="text" class="form-control" id="Code_UE" placeholder="Entrer le code" name="Code_UE">
 					  </div>
 					</div>
-					<div class="form-group">
-					  <label class="control-label col-sm-2" for="Libelle_UE">Libelle_UE:</label>
-					  <div class="col-sm-10">          
-						<input type="text" class="form-control" id="Libelle_UE" placeholder="Entrer le libelle " name="Libelle_UE">
-					  </div>
-					</div>
 					
 					<div class="form-group">        
 					  <div class="col-sm-offset-2 col-sm-10">
-						<button type="button" class="btn btn-primary"><a  style="color:white" name="modifier">Modifier</a></button>
+						<button type="submit" class="btn btn-primary"><a  style="color:white">Supprimer</a></button>
                         <button type="submit" class="btn btn-primary" ><a href="AffichageUE.php" style="color: white">Annuler</a></button>
 				     </div>
 					</div>
@@ -64,16 +58,47 @@
 </html> 
  
 
+<?php
+session_start();
+require_once __DIR__ . '/../config/connexion.php';
 
- <?php
-require_once('connexion.php');
-$ac = new connexion();
-$con = $ac->connection();
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit();
+}
 
-	$Code_UE = $_POST['Code_UE'];
-	$Libelle_UE =$_POST['Libelle_UE'];
+if (isset($_GET['id'])) {
+    $ac = new Connexion();
+    $con = $ac->connection();
+    
+    $ue_id = htmlspecialchars($_GET['id']);
+    
+    try {
+        // First check if UE exists
+        $check = $con->prepare("SELECT COUNT(*) FROM ue WHERE Code_UE = :id");
+        $check->execute(['id' => $ue_id]);
+        
+        if ($check->fetchColumn() > 0) {
+            // Delete related records first (assuming foreign key constraints)
+            $stmt1 = $con->prepare("DELETE FROM enseigner WHERE FK_Code_UE = :id");
+            $stmt1->execute(['id' => $ue_id]);
+            
+            $stmt2 = $con->prepare("DELETE FROM intervenir WHERE FK_Code_UE = :id");
+            $stmt2->execute(['id' => $ue_id]);
+            
+            // Finally delete the UE
+            $stmt3 = $con->prepare("DELETE FROM ue WHERE Code_UE = :id");
+            $stmt3->execute(['id' => $ue_id]);
+            
+            $_SESSION['success'] = "UE supprimée avec succès.";
+        } else {
+            $_SESSION['error'] = "UE non trouvée.";
+        }
+    } catch(PDOException $e) {
+        $_SESSION['error'] = "Erreur lors de la suppression de l'UE.";
+    }
+}
 
-	$req = $con->prepare(" UPDATE `ue` SET `Libelle_UE`='$Libelle_UE' WHERE `Code_UE`='$Code_UE'");
-	$req->execute();
-	header("location:AffichageUE.php");
+header("Location: AffichageUE.php");
+exit();
 ?>
