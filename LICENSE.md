@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2017 Creative Tim
+Copyright (c) 2025 [Your Name or Organization Name] // Update with your name or org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

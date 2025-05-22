@@ -1,5 +1,61 @@
 # Change Log
 
+## [2.0.0] 2025-05-22
+
+### Major Project Restructuring
+
+#### Directory Structure Changes
+
+- Created `public/` directory as secure entry point
+  - Moved `index.php` for better security
+  - Centralized authentication handling
+- Established `src/` directory for application logic
+  - Created `admin/` for administrative features
+  - Created `auth/` for authentication management
+  - Created `student/` for student features
+- Consolidated assets into `assets/` directory
+  - Merged multiple CSS directories
+  - Consolidated JavaScript files
+  - Centralized image resources
+  - Combined font files
+
+#### Code Architecture Improvements
+
+- Implemented proper session management across all pages
+- Standardized database connections through `connexion.php`
+- Organized professor management by academic levels (L1, L2, L3G, L3S, L3M)
+- Enhanced student evaluation system with proper database relations
+- Improved navigation structure and menu organization
+
+#### Security Enhancements
+
+- Centralized authentication in `auth/` directory
+- Implemented proper session handling
+- Added login validation
+- Secured database queries using PDO
+
+#### Database Updates
+
+- Renamed database script to `db_evaluation_final.sql`
+- Optimized table relationships
+- Added proper foreign key constraints
+- Improved query performance
+
+#### Bug Fixes
+
+- Corrected file paths across all pages
+- Fixed relative path issues in includes
+- Resolved session management issues
+- Corrected database query issues
+- Fixed navigation menu highlighting
+
+#### Documentation
+
+- Updated README with detailed installation instructions
+- Added comprehensive project structure documentation
+- Included security considerations
+- Added future improvement recommendations
+
 ## [1.4.0] 2017-11-03
 
 ### Library Updates
