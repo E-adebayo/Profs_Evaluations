@@ -5,7 +5,7 @@
 <title>Enregistrement</title>   
 
 </head>   
-<body style="background:url(image/IMG024.jpg); color: white; font-size: 24px ">  
+<body style="background:url(../assets/image/IMG024.jpg); color: white; font-size: 24px ">  
 	<nav class="navbar navbar-expand-lg navbar-light bg-primary"  >
     <div class="col-md-9">
     	<h1>
@@ -84,12 +84,12 @@
 	</div>
 	</div>
 	</form>
-	<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/3.2.1/jquery.min.js"></script>    
-	 <script src="js/jquery-3.3.1.slim.min.js"></script>
-	   <script src="js/popper.min.js"></script>
-	   <script src="js/bootstrap.min.js"></script>
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/3.2.1/jquery.min.js"></script>    
+	 <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>
+	   <script src="../assets/js/popper.min.js"></script>
+	   <script src="../assets/js/bootstrap.min.js"></script>
 </body>
 </html> 
  

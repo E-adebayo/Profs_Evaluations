@@ -1,8 +1,13 @@
 <?php
-    session_start();
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Institut Africain d'informatique</title>
     <meta charset="utf-8">
@@ -25,7 +30,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#" style="color: #FFFF99">
-                            <h6>Bienvenue <b><?php echo htmlspecialchars($_SESSION['login']); ?></b></h6>
+                            <h6>Bienvenue <b><?php echo isset($_SESSION['login']) ? htmlspecialchars($_SESSION['login']) : ''; ?></b></h6>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -45,15 +50,15 @@
                         <br><br><br>
                         <div class="col-sm-12">
                             <button type="button" class="btn btn-danger btn-lg btn-block">
-                                <a href="views/AffichageUE.php" style="color: #FFFF99">Voir les Unités d'Enseignement enregistrées</a>
+                                <a href="AffichageUE.php" style="color: #FFFF99">Voir les Unités d'Enseignement enregistrées</a>
                             </button>
                             <br><br><br><br>
                             <button type="button" class="btn btn-danger btn-lg btn-block">
-                                <a href="views/AffichageEC.php" style="color: #FFFF99">Voir les Elements Constitutifs enregistrés</a>
+                                <a href="AffichageEC.php" style="color: #FFFF99">Voir les Elements Constitutifs enregistrés</a>
                             </button>
                             <br><br><br><br>
                             <button type="button" class="btn btn-danger btn-lg btn-block">
-                                <a href="views/AffichageProf.php" style="color: #FFFF99">Voir les Professeurs enregistrés</a>
+                                <a href="AffichageProf.php" style="color: #FFFF99">Voir les Professeurs enregistrés</a>
                             </button>
                         </div>
                     </div>
