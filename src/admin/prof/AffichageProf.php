@@ -130,13 +130,13 @@
                     <div class="col-md-12">
                         <div class="card" style="background-color: white">
                             <div class="header">
-                                <h4 class="title" align="center"><b>Afficher les professeurs</b></h4>
+                                <h4 class="title" style="text-align: center;"><b>Afficher les professeurs</b></h4>
                             </div><br>
 
                             <div class="col-md-12">
                             <div class="card card-plain">
                             <div class="header">
-                                <h3 class="title" align="center"><u>LICENCE 1</u></h3>
+                                <h3 class="title" style="text-align: center;"><u>LICENCE 1</u></h3>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped table-light">
@@ -171,7 +171,7 @@
                             <div class="col-md-12">
                             <div class="card card-plain">
                             <div class="header">
-                                <h3 class="title" align="center"><u>LICENCE 2</u></h3>
+                                <h3 class="title" style="text-align: center;"><u>LICENCE 2</u></h3>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped table-light">
@@ -207,7 +207,7 @@
                             <div class="col-md-12">
                             <div class="card card-plain">
                             <div class="header">
-                                <h3 class="title" align="center"><u>GENIE LOGICIEL 3</u></h3>
+                                <h3 class="title" style="text-align: center;"><u>GENIE LOGICIEL 3</u></h3>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped table-light">
@@ -242,7 +242,7 @@
                             <div class="col-md-12">
                             <div class="card card-plain">
                             <div class="header">
-                                <h3 class="title" align="center"><u>SYSTEME ET RESEAUX 3</u></h3>
+                                <h3 class="title" style="text-align: center;"><u>SYSTÈME ET RESEAUX 3</u></h3>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped table-light">
@@ -277,7 +277,7 @@
                             <div class="col-md-12">
                             <div class="card card-plain">
                             <div class="header">
-                                <h3 class="title" align="center"><u>MULTIMEDIA WEB 3 </u></h3>
+                                <h3 class="title" style="text-align: center;"><u>MULTIMEDIA WEB 3 </u></h3>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped table-light">
@@ -320,7 +320,7 @@
 
         <footer class="footer">
             <div class="container-fluid">
-               <div class="copyright" align="center">
+               <div class="copyright" style="text-align: center;">
                     <h5>&copy; 2020 Copyright:
                         <a href="http://iai-togo.tg" target="_blank">iai-togo.tg</a> 
                          |  All rights reserved

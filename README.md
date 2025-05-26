@@ -69,7 +69,7 @@ Le système utilise une base de données MySQL avec les relations suivantes :
 1. Cloner le dépôt:
 
    ```bash
-   git clone [URL_du_depot]
+   git clone https://github.com/E-adebayo/Profs_Evaluations.git
    ```
 
 2. Importer la base de données:

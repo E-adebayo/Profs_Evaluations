@@ -89,13 +89,13 @@
 		<h3></h3>
 			<?php
 	         if(isset($erreur)) {
-	            echo '<h1 align="center"><b><font color="white">'.$erreur."</font></b></h1>";
+	            echo '<h1 style="text-align: center;"><b><span style="color: white;">'.$erreur."</span></b></h1>";
          		}
 	         elseif(isset($error)) {
-	            echo '<h1 align="center"><b><font color="white">'.$error."</font></b></h1>";
+	            echo '<h1 style="text-align: center;"><b><span style="color: white;">'.$error."</span></b></h1>";
          		}
          	  elseif(isset($erreur0)) {
-	            echo '<h1 align="center"><b><font color="white">'.$erreur0."</font></b></h1>";
+	            echo '<h1 style="text-align: center;"><b><span style="color: white;">'.$erreur0."</span></b></h1>";
          		}
          	?>
 		<div class="sub-main-w3">

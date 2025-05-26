@@ -113,13 +113,13 @@
                     <div class="col-md-12">
                         <div class="card" >
                             <div class="header">
-                                <h4 class="title" align="center"><u><b>Evaluation d'un professeur</b></u></h4>
+                                <h4 class="title" style="text-align: center;"><u><b>Evaluation d'un professeur</b></u></h4>
                             </div>
                             <div class="content" >
                                 <form method="POST" >
                                     <div class="row" >
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Informations sur le professeur </u> </h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Informations sur le professeur </u> </h5>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -170,7 +170,7 @@
 <br>
                                     <div class="row" >
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation générale du cours suivi? </u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation générale du cours suivi? </u></h5>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -258,7 +258,7 @@
 <br>
                                     <div class="row">
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation générale du contenu du cours? </u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation générale du contenu du cours? </u></h5>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
@@ -314,7 +314,7 @@
 <br>
                                     <div class="row" >
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation du déroulement du cours?</u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation du déroulement du cours?</u></h5>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -355,7 +355,7 @@
 <br>
                                     <div class="row" >
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation de la documentation fournie?</u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation de la documentation fournie?</u></h5>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -396,7 +396,7 @@
 <br>
                                     <div class="row">
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation Travaux Dirigés ou Travaux Pratiques?</u> </h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation Travaux Dirigés ou Travaux Pratiques?</u> </h5>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
@@ -452,7 +452,7 @@
 <br>
                                     <div class="row">
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle suggestion faites-vous pour améliorer ce cours?</u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle suggestion faites-vous pour améliorer ce cours?</u></h5>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -463,7 +463,7 @@
 <br>
                                     <div class="row" >
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle est votre appréciation du cadre de l'enseignement?</u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle est votre appréciation du cadre de l'enseignement?</u></h5>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -541,7 +541,7 @@
 <br>
                                     <div class="row">
                                         <div class="modal-header">
-                                         <h5 class="modal-title" align="center"><u>Quelle suggestion faites-vous pour améliorer ce cours?</u></h5>
+                                         <h5 class="modal-title" style="text-align: center;"><u>Quelle suggestion faites-vous pour améliorer ce cours?</u></h5>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -580,7 +580,7 @@
 
         <footer class="footer">
             <div class="container-fluid">
-               <div class="copyright" align="center">
+               <div class="copyright" style="text-align: center;">
                     <h5>&copy; 2020 Copyright:
                         <a href="http://iai-togo.tg" target="_blank">iai-togo.tg</a> 
                          |  All rights reserved

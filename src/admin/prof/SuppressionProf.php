@@ -95,7 +95,7 @@
                     <div class="col-md-12">
                         <div class="card" >
                             <div class="header">
-                                <h4 class="title"align="center">Supprimer un professeur</h4>
+                                <h4 class="title"style="text-align: center;">Supprimer un professeur</h4>
                             </div>
                             <div class="content">
                                 <form method="POST" action="Suppression.php">
@@ -163,7 +163,7 @@
 
         <footer class="footer">
             <div class="container-fluid">
-               <div class="copyright" align="center">
+               <div class="copyright" style="text-align: center;">
                     <h5>&copy; 2020 Copyright:
                         <a href="http://iai-togo.tg" target="_blank">iai-togo.tg</a> 
                          |  All rights reserved

@@ -7,7 +7,7 @@ class connexion{
 			$bdd->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 			echo "Connection OK";
 		}catch(PDOException $e){
-			echo "Une erreur est surnevue ".$e->getMessage();
+			echo "Une erreur est survenue ".$e->getMessage();
 		}
 		return $bdd;
 	}

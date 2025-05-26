@@ -1193,7 +1193,7 @@ $sta4=$data14[0]+$data24[0]+$data34[0]+$data44[0]+$data54[0]+$data64[0]+$data74[
                         <div class="card ">
                             <div class="header">
                                 <h4 class="title">Statistiques des évaluations</h4>
-                                <p class="category">Représentation en batonnets</p>
+                                <p class="category">Représentation en bâtonnets</p>
                             </div>
                            
                                 <canvas id="myChart" ></canvas>
@@ -1244,7 +1244,7 @@ $sta4=$data14[0]+$data24[0]+$data34[0]+$data44[0]+$data54[0]+$data64[0]+$data74[
         
         <footer class="footer">
             <div class="container-fluid">
-               <div class="copyright" align="center">
+               <div class="copyright" style="text-align: center;">
                     <h5>&copy; 2020 Copyright:
                         <a href="http://iai-togo.tg" target="_blank">iai-togo.tg</a> 
                          |  All rights reserved

@@ -1,5 +1,14 @@
 # Change Log
 
+## [2.0.1] 2025-05-26
+
+### Code Modernization
+
+- Updated HTML markup to follow modern standards
+  - Replaced deprecated `align` attributes with CSS `text-align` property
+  - Replaced obsolete `<font>` tags with `<span>` and CSS styling
+  - Improved HTML5 compliance across multiple files
+
 ## [2.0.0] 2025-05-22
 
 ### Major Project Restructuring
@@ -78,7 +87,7 @@
 
 ### New Template page + Video Tutorial [current version]
 
-- added the default template page + youtube video tutorial on how to create an Admin Template (link: <https://www.youtube.com/watch>...)
+- added the default template page + YouTube video tutorial on how to create an Admin Template (link: <https://www.youtube.com/watch>...)
 
 ## [1.2] 2016-01-17
 
