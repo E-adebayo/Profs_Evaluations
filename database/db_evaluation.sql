@@ -295,6 +295,7 @@ CREATE TABLE IF NOT EXISTS `evaluer` (
   `Id_Ev` int(10) NOT NULL AUTO_INCREMENT,
   `Nom_Prof` varchar(50) NOT NULL,
   `Prenom_Prof` varchar(50) NOT NULL,
+  `Classe` varchar(10) NOT NULL,
   `Mention1` varchar(15) NOT NULL,
   `Mention2` varchar(15) NOT NULL,
   `Mention3` varchar(15) NOT NULL,

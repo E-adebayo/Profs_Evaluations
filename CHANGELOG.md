@@ -1,5 +1,43 @@
 # Change Log
 
+## [2.1.0] 2025-06-12
+
+### UI Enhancements
+
+#### New Color Scheme
+
+- Implemented a consistent purple color scheme (#9966FF) across the application
+  - Updated sidebar gradient with purple theme
+  - Changed card accent lines to match the new color
+  - Standardized all interactive elements with the new purple color
+
+#### Layout Improvements
+
+- Fixed sidebar and main panel layout to prevent overlap
+- Enhanced responsive behavior across all screen sizes
+- Added proper spacing and visual hierarchy throughout the interface
+
+#### Visual Design Updates
+
+- Added subtle background patterns and gradient overlays
+- Improved card styling with hover effects and shadows
+- Enhanced table styling with gradient headers and interactive rows
+- Updated form controls with better focus states and visual feedback
+
+#### New Features
+
+- Added custom JavaScript file to ensure consistent behavior
+- Implemented animations for interactive elements
+- Enhanced visual feedback for user actions
+- Improved login form aesthetics
+
+#### Code Quality
+
+- Created modular CSS with proper organization
+- Removed conflicting styles
+- Fixed inconsistencies across different page templates
+- Optimized styling for better performance
+
 ## [2.0.1] 2025-05-26
 
 ### Code Modernization
